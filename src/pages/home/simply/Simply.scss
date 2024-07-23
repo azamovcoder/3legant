@@ -1,0 +1,80 @@
+.simply {
+  &__top {
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h2 {
+      max-width: 643px;
+      font-size: 72px;
+      font-weight: 500;
+      font-family: "Poppins", sans-serif;
+    }
+    p {
+      max-width: 453px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #6c7275;
+      span {
+        color: #343839;
+      }
+    }
+  }
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+    height: 800px;
+    h3 {
+      font-size: 28px;
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
+    }
+    button {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 18px;
+      border: none;
+      background: none;
+      border-bottom: 2px solid #343839;
+      padding-bottom: 5px;
+      font-weight: 500;
+    }
+  }
+  &__card__left {
+    position: relative;
+    grid-column: span 6;
+    grid-row: span 12;
+    background: url("../../../assets/home/left-card.png") center/cover;
+    &__item {
+      position: absolute;
+      top: 40px;
+      left: 40px;
+    }
+  }
+
+  &__card__right__top {
+    position: relative;
+    grid-column: span 6;
+    grid-row: span 6;
+    background: url("../../../assets//home/right-top.png") top/cover no-repeat;
+    &__item {
+      position: absolute;
+      bottom: 40px;
+      left: 40px;
+    }
+  }
+  &__card__right__bottom {
+    grid-column: span 6;
+    position: relative;
+    grid-row: span 6;
+    background: url("../../../assets//home/right-bottom.png") top/cover
+      no-repeat;
+    &__item {
+      position: absolute;
+      bottom: 40px;
+      left: 40px;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.about {
+  &__cards {
+    padding: 40px 0;
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+  }
+  &__card {
+    width: 23%;
+    height: 180px;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #f3f5f7;
+    img {
+      width: 48px;
+    }
+  }
+}
