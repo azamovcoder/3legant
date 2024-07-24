@@ -1,0 +1,33 @@
+.new__arrivals {
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    h3 {
+      font-size: 40px;
+      max-width: 149px;
+      font-weight: 600;
+    }
+    button {
+      background: none;
+      border: none;
+      a {
+        display: flex;
+        align-items: end;
+        gap: 5px;
+        font-size: 16px;
+        padding-bottom: 3px;
+        border-bottom: 2px solid black;
+      }
+    }
+  }
+  &__cards {
+    display: flex;
+    gap: 50px;
+    overflow-x: auto;
+  }
+  &__cards::-webkit-scrollbar {
+    display: none; /* Chrome, Safari ve Opera uchun scrollni yashiradi */
+  }
+}

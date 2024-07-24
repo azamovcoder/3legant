@@ -10,7 +10,7 @@ const About = () => {
       <div className="about container">
         <div className="about__cards">
           {HomeAboutData?.map((el) => (
-            <div className="about__card">
+            <div key={el?.id} className="about__card">
               <img src={el?.img} alt={el?.title} />
               <h3>{el?.title}</h3>
               <p>{el?.desc}</p>

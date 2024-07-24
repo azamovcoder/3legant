@@ -5,6 +5,7 @@ import React, { Fragment } from "react";
 import About from "./about/About";
 import Articles from "./articles/Articles";
 import Hero from "./hero/Hero";
+import NewArrivals from "./newArrivals/NewArrivals.";
 import Newsletter from "../../components/newsletter/Newsletter";
 import Sale from "./sale/Sale";
 import Simply from "./simply/Simply";
@@ -14,6 +15,8 @@ const Home = () => {
     <Fragment>
       <Hero />
       <Simply />
+      <NewArrivals />
+
       <About />
       <Sale />
       <Articles />
