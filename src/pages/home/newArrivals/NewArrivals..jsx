@@ -23,7 +23,7 @@ const NewArrivals = () => {
           </button>
         </div>
         <div className="new__arrivals__cards container">
-          {data?.slice(31, 40)?.map((el) => (
+          {data?.slice(0, 10)?.map((el) => (
             <CardItem el={el} key={el?.id} />
           ))}
         </div>

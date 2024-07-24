@@ -14,9 +14,8 @@ const Home = () => {
   return (
     <Fragment>
       <Hero />
-      <Simply />
       <NewArrivals />
-
+      <Simply />
       <About />
       <Sale />
       <Articles />

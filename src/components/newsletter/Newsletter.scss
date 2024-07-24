@@ -30,4 +30,53 @@
       font-size: 20px;
     }
   }
+  @media (max-width: 550px) {
+    &__input {
+      // padding: 20px;
+      border-bottom: 2px solid #6c727580;
+      max-width: 350px;
+      margin: 50px auto;
+      display: flex;
+      justify-content: space-between;
+      &__left {
+        display: flex;
+        // gap: 5px;
+        font-size: 25px;
+        input {
+          border: none;
+          background: none;
+          font-size: 20px;
+        }
+      }
+      button {
+        border: none;
+        background: none;
+        color: #6c727580;
+        font-size: 14px;
+      }
+    }
+  }
+  @media (max-width: 450px) {
+    &__input {
+      // padding: 20px;
+      border-bottom: 2px solid #6c727580;
+      width: 200px;
+      margin: 50px auto;
+      display: flex;
+      justify-content: space-between;
+      &__left {
+        display: flex;
+        // gap: 5px;
+        font-size: 20px;
+        input {
+          border: none;
+          background: none;
+          font-size: 14px;
+        }
+      }
+      button {
+        display: none;
+      }
+    }
+  }
 }

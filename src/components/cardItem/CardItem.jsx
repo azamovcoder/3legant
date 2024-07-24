@@ -3,6 +3,9 @@ import "./CardItem.scss";
 import { FaRegStar, FaRegStarHalfStroke, FaStar } from "react-icons/fa6";
 import React, { Fragment } from "react";
 
+import { NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
 const CardItem = ({ el }) => {
   const getRating = () => {
     let res = [];
@@ -28,7 +31,9 @@ const CardItem = ({ el }) => {
     <Fragment>
       <div className="product__item">
         <div className="product__item__img">
-          <img src={el?.images[0]} alt="product.png" />
+          <NavLink to={`/singlePage/${el?.id}`}>
+            <img src={el?.images[0]} alt="product.png" />
+          </NavLink>
         </div>
         <div className="product__item__info">
           <div className="product__item__rating">{getRating()}</div>

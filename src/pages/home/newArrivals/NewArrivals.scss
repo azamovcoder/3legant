@@ -30,4 +30,34 @@
   &__cards::-webkit-scrollbar {
     display: none; /* Chrome, Safari ve Opera uchun scrollni yashiradi */
   }
+  @media (max-width: 500px) {
+    &__top {
+      h3 {
+        font-size: 35px;
+      }
+    }
+    &__cards {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+    }
+  }
+  @media (max-width: 400px) {
+    &__top {
+      h3 {
+        font-size: 30px;
+        max-width: 150px;
+      }
+    }
+    button {
+      a {
+        font-size: 14px;
+      }
+    }
+    &__cards {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+    }
+  }
 }
