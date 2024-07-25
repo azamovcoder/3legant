@@ -35,6 +35,10 @@ const SinglePage = () => {
 
     return res;
   };
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, [Id]);
+
   return (
     <Fragment>
       <div className="single container">
