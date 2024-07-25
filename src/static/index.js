@@ -29,3 +29,5 @@ export const HomeAboutData = [
     img: AboutImg4,
   },
 ];
+
+export const Single__comments = [];

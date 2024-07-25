@@ -100,6 +100,28 @@ const SinglePage = () => {
           </div>
         </div>
       </div>
+      <div className="single__comments container">
+        <div className="single__comments__top">
+          <h2>Customer Reviews</h2>
+          <div className="">{getRating()} 11 Reviews </div>
+        </div>
+        <div className="single__comments__cards">
+          <div className="single__comments__cards__card">
+            <div className="single__comments__cards__card__img">
+              <img src="" alt="" />
+            </div>
+            <div className="single__comments__cards__card__info">
+              <h3></h3>
+              {getRating()}
+              <p></p>
+              <div className="">
+                <button>Like</button>
+                <button>Reply</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </Fragment>
   );
 };
