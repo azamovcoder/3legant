@@ -16,12 +16,11 @@ import ticketImg from "../../../assets/home/ticket.svg";
 const Header = () => {
   const [search, setSearch] = useState(false);
   const [show, setShow] = useState(false);
-  console.log(show);
   return (
     <Fragment>
       <div className="header__top">
         <div className="header__top__main container">
-          <img src={ticketImg} alt="tiketImg" />
+          <img src={ticketImg} alt="ticket.img" />
           <p>30% off storewide — Limited time! </p>
           <span>
             <NavLink>
@@ -90,10 +89,10 @@ const Header = () => {
                 <NavLink>
                   <IoPersonCircleOutline />
                 </NavLink>
-                <NavLink>
+                <NavLink to={"cart"}>
                   <CgShoppingBag />
                 </NavLink>
-                <NavLink>
+                <NavLink to={"favorites"}>
                   <BsBagHeart />
                 </NavLink>
               </div>

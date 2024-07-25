@@ -1,0 +1,23 @@
+.empty__cart {
+  min-height: 422px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  a {
+    color: #fff;
+    padding: 10px;
+    background: #ccc;
+    border-radius: 10px;
+  }
+  @media (max-width: 450px) {
+    img {
+      width: 70%;
+    }
+    a {
+      padding: 8px;
+      font-size: 16px;
+    }
+  }
+}
