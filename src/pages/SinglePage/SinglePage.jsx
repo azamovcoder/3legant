@@ -1,7 +1,7 @@
 import "./SinglePage.scss";
 
 import { FaRegStar, FaRegStarHalfStroke, FaStar } from "react-icons/fa6";
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 
 import CountdownTimer from "./countdownTimer/CountdownTimer";
 import { FaRegHeart } from "react-icons/fa";

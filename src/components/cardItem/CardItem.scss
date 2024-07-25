@@ -10,11 +10,13 @@
       object-fit: contain;
     }
   }
+
   &__info {
     display: flex;
     flex-direction: column;
     gap: 8px;
   }
+
   &__prices {
     display: flex;
     gap: 10px;

@@ -1,8 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  value: [], //JSON.parse(localStorage.getItem("wishlist")) || [],
-};
+const initialState = JSON.parse(localStorage.getItem("wishlist")) || [];
 
 const wishlistSlice = createSlice({
   name: "heart",
@@ -15,7 +13,7 @@ const wishlistSlice = createSlice({
       } else {
         state.value = state.value.filter((i) => i._id !== action.payload._id);
       }
-      //   localStorage.setItem("wishlist", JSON.stringify(state.value));
+      localStorage.setItem("wishlist", JSON.stringify(state.value));
     },
   },
 });
