@@ -121,6 +121,46 @@
     }
   }
 }
+.single__comments {
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 30px;
+  }
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    &__card {
+      display: flex;
+      align-items: start;
+      gap: 30px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e8ecef;
+      &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        p {
+          width: 83%;
+          color: #353945;
+          font-weight: 400;
+          font-size: 16px;
+        }
+        &__buttons {
+          display: flex;
+          gap: 10px;
+          button {
+            border: none;
+            background: transparent;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 700px) {
   .single {
     flex-direction: column;

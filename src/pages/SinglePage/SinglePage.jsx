@@ -5,6 +5,7 @@ import React, { Fragment, useState } from "react";
 
 import CountdownTimer from "./countdownTimer/CountdownTimer";
 import { FaRegHeart } from "react-icons/fa";
+import { SingleComments } from "../../static";
 import { useGetProductByIdQuery } from "../../context/api/productApi";
 import { useParams } from "react-router-dom";
 
@@ -106,20 +107,22 @@ const SinglePage = () => {
           <div className="">{getRating()} 11 Reviews </div>
         </div>
         <div className="single__comments__cards">
-          <div className="single__comments__cards__card">
-            <div className="single__comments__cards__card__img">
-              <img src="" alt="" />
-            </div>
-            <div className="single__comments__cards__card__info">
-              <h3></h3>
-              {getRating()}
-              <p></p>
-              <div className="">
-                <button>Like</button>
-                <button>Reply</button>
+          {SingleComments?.map((el) => (
+            <div key={el?.id} className="single__comments__cards__card">
+              <div className="single__comments__cards__card__img">
+                <img src={el?.img} alt="" />
+              </div>
+              <div className="single__comments__cards__card__info">
+                <h3>{el?.title}</h3>
+                <span>{getRating()}</span>
+                <p>{el?.desc}</p>
+                <div className="single__comments__cards__card__info__buttons">
+                  <button>Like</button>
+                  <button>Reply</button>
+                </div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </Fragment>
