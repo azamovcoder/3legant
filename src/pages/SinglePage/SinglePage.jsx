@@ -5,6 +5,7 @@ import React, { Fragment, useState } from "react";
 
 import CountdownTimer from "./countdownTimer/CountdownTimer";
 import { FaRegHeart } from "react-icons/fa";
+import Newsletter from "../../components/newsletter/Newsletter";
 import { SingleComments } from "../../static";
 import { useGetProductByIdQuery } from "../../context/api/productApi";
 import { useParams } from "react-router-dom";
@@ -125,6 +126,7 @@ const SinglePage = () => {
           ))}
         </div>
       </div>
+      <Newsletter />
     </Fragment>
   );
 };
