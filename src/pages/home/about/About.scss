@@ -31,4 +31,15 @@
       gap: 30px;
     }
   }
+  @media (max-width: 450px) {
+    &__cards {
+      padding: 40px 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    &__card {
+      padding: 0px;
+    }
+  }
 }

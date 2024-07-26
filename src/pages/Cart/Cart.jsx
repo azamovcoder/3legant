@@ -8,13 +8,6 @@ import { useSelector } from "react-redux";
 
 const Cart = () => {
   const cartData = useSelector((state) => state.cart.value);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (cartData.length > 0) {
-      navigate("shoppingCart");
-    }
-  }, []);
 
   return (
     <Fragment>

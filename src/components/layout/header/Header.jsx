@@ -57,16 +57,16 @@ const Header = () => {
                   </button>
                 </div>
                 <li>
-                  <NavLink>Home</NavLink>
+                  <NavLink to={"/"}>Home</NavLink>
                 </li>
                 <li>
-                  <NavLink>Shop</NavLink>
+                  <NavLink to={"shop"}>Shop</NavLink>
                 </li>
                 <li>
-                  <NavLink>Blog</NavLink>
+                  <NavLink to={"blog"}>Blog</NavLink>
                 </li>
                 <li>
-                  <NavLink>Contact Us</NavLink>
+                  <NavLink to={"contact"}>Contact Us</NavLink>
                 </li>
               </ul>
               <div className="header__items">
@@ -89,7 +89,7 @@ const Header = () => {
                 <NavLink>
                   <IoPersonCircleOutline />
                 </NavLink>
-                <NavLink to={"cart"}>
+                <NavLink to={"cart/shoppingCart"}>
                   <CgShoppingBag />
                 </NavLink>
                 <NavLink to={"favorites"}>

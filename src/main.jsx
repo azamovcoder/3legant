@@ -1,18 +1,23 @@
 import "./index.css";
 
-import App from "./App.jsx";
+import React, { Suspense, lazy } from "react";
+
 import { BrowserRouter } from "react-router-dom";
+import LazyLoding from "./components/lazyLoading/LazyLoding";
 import { Provider } from "react-redux";
-import React from "react";
 import ReactDOM from "react-dom/client";
 import { store } from "./context";
 
+const App = lazy(() => import("./App.jsx"));
+
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  // <React.StrictMode>
+  <Suspense fallback={<LazyLoding />}>
     <BrowserRouter>
       <Provider store={store}>
         <App />
       </Provider>
     </BrowserRouter>
-  </React.StrictMode>
+  </Suspense>
+  // </React.StrictMode>
 );

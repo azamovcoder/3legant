@@ -81,7 +81,7 @@ const ShoppingCart = () => {
                       <button onClick={() => dispatch(addToCart(el))}>+</button>
                     </div>
                     <button id="rem" onClick={() => dispatch(remove(el))}>
-                      <IoCloseOutline fontSize={20} /> Remove
+                      Remove
                     </button>
                   </div>
                 </div>

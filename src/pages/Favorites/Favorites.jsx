@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import CardItem from "../../components/cardItem/CardItem";
 import { NavLink } from "react-router-dom";
 import { addToCart } from "../../context/slices/cartSlices";
+import emptyImg from "../../assets/Cart/emptyw.svg";
 import { toggleHeart } from "../../context/slices/wishlistSlices";
 
 const Favorites = () => {
@@ -42,54 +43,64 @@ const Favorites = () => {
   const dispatch = useDispatch();
   return (
     <Fragment>
-      <div className="favorites container">
-        <div className="favorites__cards">
-          {wishlistData?.map((el) => (
-            <div className="favorites__cards__card">
-              <div className="favorites__cards__card__img">
-                <NavLink to={`/singlePage/${el?.id}`}>
-                  <img src={el?.images[0]} alt="product.png" />
-                </NavLink>
-                <button
-                  onClick={() => dispatch(toggleHeart(el))}
-                  className="favorites__cards__card__img__like__btn"
-                >
-                  {wishlistData.some((element) => element.id === el.id) ? (
-                    <FaHeart />
-                  ) : (
-                    <FaRegHeart />
-                  )}
-                </button>
-                <button
-                  disabled={cartData?.some((element) => element.id === el.id)}
-                  onClick={() => {
-                    dispatch(addToCart(el));
-                  }}
-                  className="favorites__cards__card__img__add-cart__btn"
-                >
-                  {cartData?.some((element) => element.id === el.id)
-                    ? "Added to Cart"
-                    : "Add to  Cart"}
-                </button>
-              </div>
-              <div className="favorites__cards__card__info">
-                <div className="favorites__cards__card__rating">
-                  {getRating()}
+      {wishlistData.length ? (
+        <div className="favorites container">
+          <div className="favorites__cards">
+            {wishlistData?.map((el) => (
+              <div className="favorites__cards__card">
+                <div className="favorites__cards__card__img">
+                  <NavLink to={`/singlePage/${el?.id}`}>
+                    <img src={el?.images[0]} alt="product.png" />
+                  </NavLink>
+                  <button
+                    onClick={() => dispatch(toggleHeart(el))}
+                    className="favorites__cards__card__img__like__btn"
+                  >
+                    {wishlistData.some((element) => element.id === el.id) ? (
+                      <FaHeart />
+                    ) : (
+                      <FaRegHeart />
+                    )}
+                  </button>
+                  <button
+                    disabled={cartData?.some((element) => element.id === el.id)}
+                    onClick={() => {
+                      dispatch(addToCart(el));
+                    }}
+                    className="favorites__cards__card__img__add-cart__btn"
+                  >
+                    {cartData?.some((element) => element.id === el.id)
+                      ? "Added to Cart"
+                      : "Add to  Cart"}
+                  </button>
                 </div>
-                <h3 className="favorites__cards__card__title">{el?.title}</h3>
-                <div className="favorites__cards__card__prices">
-                  <span className="favorites__cards__card__price">
-                    ${el?.price}.00
-                  </span>
-                  <span className="favorites__cards__card__old__price">
-                    ${el?.oldPrice}
-                  </span>
+                <div className="favorites__cards__card__info">
+                  <div className="favorites__cards__card__rating">
+                    {getRating()}
+                  </div>
+                  <h3 className="favorites__cards__card__title">{el?.title}</h3>
+                  <div className="favorites__cards__card__prices">
+                    <span className="favorites__cards__card__price">
+                      ${el?.price}.00
+                    </span>
+                    <span className="favorites__cards__card__old__price">
+                      ${el?.oldPrice}
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      ) : (
+        <>
+          <div className="empty">
+            <img src={emptyImg} alt="empty.png" />
+            <h2>Your Favorites empty yet.</h2>
+            <NavLink to={"/"}>Go Home</NavLink>
+          </div>
+        </>
+      )}
     </Fragment>
   );
 };
