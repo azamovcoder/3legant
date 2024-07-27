@@ -1,6 +1,6 @@
 import "./Contact.scss";
 
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 
 import About from "../home/about/About";
 import Cimg1 from "../../assets/Cart/cc1.svg";
@@ -10,6 +10,9 @@ import ContactImg from "../../assets/Cart/contact_a.jpg";
 import { FaArrowRight } from "react-icons/fa6";
 
 const Contact = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
   const BOT__TOKEN = "7468900185:AAH4z9uHj3Y9MTsaz2KcYlGW19zpWZK0llo";
   const CHAT__ID = "6366315724";
   const [fname, setFname] = useState("");

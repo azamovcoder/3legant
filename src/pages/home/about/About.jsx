@@ -1,10 +1,13 @@
 import "./About.scss";
 
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 
 import { HomeAboutData } from "../../../static";
 
 const About = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
   return (
     <Fragment>
       <div className="about container">

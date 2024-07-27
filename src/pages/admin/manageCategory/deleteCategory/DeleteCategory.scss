@@ -1,0 +1,26 @@
+.delete__category {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  min-height: 200px;
+  &__buttons {
+    display: flex;
+    gap: 30px;
+  }
+  &__close {
+    padding: 8px;
+    background: dodgerblue;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+  &__delete {
+    padding: 8px;
+    background: crimson;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+}

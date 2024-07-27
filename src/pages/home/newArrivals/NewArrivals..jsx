@@ -5,10 +5,12 @@ import React, { Fragment } from "react";
 import CardItem from "../../../components/cardItem/CardItem";
 import { FaArrowRight } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
+import ProductLoading from "../../../components/productLoading/ProductLoading";
 import { useGetProductsQuery } from "../../../context/api/productApi";
 
 const NewArrivals = () => {
-  const { data } = useGetProductsQuery({ page: 4, limit: 10 });
+  const { data, isLoading } = useGetProductsQuery({ page: 4, limit: 10 });
+
   return (
     <Fragment>
       <div className="new__arrivals">
@@ -27,6 +29,7 @@ const NewArrivals = () => {
           ))}
         </div>
       </div>
+      {isLoading ? <ProductLoading /> : <></>}
     </Fragment>
   );
 };

@@ -1,0 +1,33 @@
+.edit__category {
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    input {
+      border: 1px solid #ddd;
+      padding: 5px;
+      width: 50%;
+      outline: none;
+    }
+  }
+  &__buttons {
+    display: flex;
+    gap: 20px;
+  }
+  &__close {
+    padding: 8px;
+    background: dodgerblue;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+  &__save {
+    padding: 8px;
+    background: green;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+}

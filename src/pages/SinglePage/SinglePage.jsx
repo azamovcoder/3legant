@@ -1,18 +1,27 @@
 import "./SinglePage.scss";
 
-import { FaRegStar, FaRegStarHalfStroke, FaStar } from "react-icons/fa6";
+import {
+  FaHeart,
+  FaRegStar,
+  FaRegStarHalfStroke,
+  FaStar,
+} from "react-icons/fa6";
 import React, { Fragment, useEffect, useState } from "react";
+import { addToCart, decrementCart } from "../../context/slices/cartSlices";
+import { useDispatch, useSelector } from "react-redux";
 
 import CountdownTimer from "./countdownTimer/CountdownTimer";
 import { FaRegHeart } from "react-icons/fa";
 import Newsletter from "../../components/newsletter/Newsletter";
 import { SingleComments } from "../../static";
+import SingleLoading from "../../components/SingleLoading/SingleLoading";
+import { toggleHeart } from "../../context/slices/wishlistSlices";
 import { useGetProductByIdQuery } from "../../context/api/productApi";
 import { useParams } from "react-router-dom";
 
 const SinglePage = () => {
   const { Id } = useParams();
-  const { data: product } = useGetProductByIdQuery(Id);
+  const { data: product, isLoading } = useGetProductByIdQuery(Id);
   const [indexImage, setIndexImage] = useState(0);
   const [count, setCount] = useState(1);
   const getRating = () => {
@@ -38,21 +47,22 @@ const SinglePage = () => {
   useEffect(() => {
     window.scroll(0, 0);
   }, [Id]);
-
+  const wishlistData = useSelector((state) => state.wishlist.value);
+  const cartData = useSelector((state) => state.cart.value);
+  const dispatch = useDispatch();
   return (
     <Fragment>
       <div className="single container">
         <div className="single__left">
           <div className="single__left__img">
-            <img src={product?.images[indexImage]} alt="product.img" />
+            <img src={product?.images?.[indexImage]} alt="product.img" />
           </div>
           <div className="single__left__images">
             {product?.images?.map((url, inx) => (
-              <div className="single__left__images__img">
+              <div className="single__left__images__img" key={inx}>
                 <img
                   onClick={() => setIndexImage(inx)}
                   src={url}
-                  key={inx}
                   alt="product.img"
                 />
               </div>
@@ -76,22 +86,28 @@ const SinglePage = () => {
           </div>
           <div className="single__right__buttons">
             <div className="single__right__buttons__top">
-              <div className="single__right__buttons__counter">
-                <button
-                  disabled={count == 1}
-                  onClick={() => setCount((prev) => prev - 1)}
-                >
-                  -
-                </button>
-                <span>{count}</span>
-                <button onClick={() => setCount((prev) => prev + 1)}>+</button>
-              </div>
-              <button className="single__right__buttons__like">
-                <FaRegHeart /> Wishlist
+              <button
+                onClick={() => dispatch(toggleHeart(product))}
+                className="single__right__buttons__like"
+              >
+                {wishlistData.some((element) => element.id === product?.id) ? (
+                  <FaHeart />
+                ) : (
+                  <FaRegHeart />
+                )}
+                Wishlist
               </button>
             </div>
-            <button className="single__right__buttons__add__cart">
-              Add to Cart
+            <button
+              disabled={cartData?.some((element) => element.id === product?.id)}
+              onClick={() => {
+                dispatch(addToCart(product));
+              }}
+              className="single__right__buttons__add__cart"
+            >
+              {cartData?.some((element) => element.id === product?.id)
+                ? "Added to Cart"
+                : "Add to Cart"}
             </button>
           </div>
           <div className="single__right__bottom">
@@ -109,7 +125,7 @@ const SinglePage = () => {
       <div className="single__comments container">
         <div className="single__comments__top">
           <h2>Customer Reviews</h2>
-          <div className="">{getRating()} 11 Reviews </div>
+          <div>{getRating()} 11 Reviews </div>
         </div>
         <div className="single__comments__cards">
           {SingleComments?.map((el) => (
@@ -130,6 +146,7 @@ const SinglePage = () => {
           ))}
         </div>
       </div>
+      {isLoading && <SingleLoading />}
       <Newsletter />
     </Fragment>
   );

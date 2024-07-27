@@ -1,6 +1,6 @@
 import "./Articles.scss";
 
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 
 import ArtImg1 from "../../../assets/home/art1.png";
 import ArtImg2 from "../../../assets/home/art2.png";
@@ -8,6 +8,9 @@ import ArtImg3 from "../../../assets/home/art3.png";
 import { FaArrowRight } from "react-icons/fa6";
 
 const Articles = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
   return (
     <Fragment>
       <div className="articles container">

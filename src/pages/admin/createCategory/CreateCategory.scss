@@ -1,0 +1,33 @@
+.create__category {
+  padding: 20px;
+  h2 {
+    padding-bottom: 30px;
+  }
+  &__form {
+    max-width: 320px;
+    &__input {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      label {
+        color: #4c4c4c;
+      }
+      input {
+        background: #f8f8f8;
+        padding: 10px;
+        color: #4c4c4c;
+        border: none;
+        border-radius: 10px;
+        outline: none;
+        font-size: 16px;
+      }
+      button {
+        border-radius: 10px;
+        border: 1px solid transparent;
+        background: #232627;
+        color: #ffff;
+        padding: 10px;
+      }
+    }
+  }
+}

@@ -9,11 +9,13 @@ import {
 } from "../../../context/slices/cartSlices";
 import { useDispatch, useSelector } from "react-redux";
 
-import CartSidebar from "../CartSidebar/CartSidebar";
 import { IoCloseOutline } from "react-icons/io5";
 import couponImg from "../../../assets/Cart/coupon.svg";
 
 const ShoppingCart = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
   const cartData = useSelector((state) => state.cart.value);
   const [totalPrice, setTotalPrice] = useState(0);
   const [value, setValue] = useState("");
@@ -45,7 +47,6 @@ const ShoppingCart = () => {
   };
   return (
     <Fragment>
-      <CartSidebar />
       <div className="shopping__cart container">
         <div className="shopping__cart__list">
           <div className="shopping__cart__list__top">

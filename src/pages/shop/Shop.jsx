@@ -7,21 +7,26 @@ import {
   FaRegStarHalfStroke,
   FaStar,
 } from "react-icons/fa6";
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import { NavLink } from "react-router-dom";
 import Newsletter from "../../components/newsletter/Newsletter";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
+import { addToCart } from "../../context/slices/cartSlices";
+import { toggleHeart } from "../../context/slices/wishlistSlices";
 import { useGetProductsQuery } from "../../context/api/productApi";
-import { useSelector } from "react-redux";
 
 const Shop = () => {
   const [page, setPage] = useState(1);
   const { data: length } = useGetProductsQuery();
   const { data } = useGetProductsQuery({ page, limit: 8 });
   const pageLength = Math.ceil(length?.length / 10);
-
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
+  const dispatch = useDispatch();
   const wishlistData = useSelector((state) => state.wishlist.value);
   const cartData = useSelector((state) => state.cart.value);
   console.log(data);

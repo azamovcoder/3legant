@@ -1,0 +1,33 @@
+.manage__category {
+  padding: 20px;
+  h2 {
+    padding-bottom: 20px;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    li {
+      display: flex;
+      gap: 20px;
+      p {
+        width: 200px;
+        padding: 5px;
+      }
+    }
+    button {
+      padding: 7px;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    &__edit {
+      background: rgb(58, 187, 58);
+    }
+    &__delete {
+      background: rgb(223, 69, 69);
+    }
+  }
+}

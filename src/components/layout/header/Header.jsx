@@ -12,10 +12,13 @@ import { LuSearch } from "react-icons/lu";
 import { NavLink } from "react-router-dom";
 import closeImg from "../../../assets/home/close.png";
 import ticketImg from "../../../assets/home/ticket.svg";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [search, setSearch] = useState(false);
   const [show, setShow] = useState(false);
+  const wishlistData = useSelector((state) => state.wishlist.value);
+  const cartData = useSelector((state) => state.cart.value);
   return (
     <Fragment>
       <div className="header__top">
@@ -86,13 +89,15 @@ const Header = () => {
                     {search ? <IoCloseOutline /> : <LuSearch />}
                   </button>
                 </NavLink>
-                <NavLink>
+                <NavLink to={"admin/create-product"}>
                   <IoPersonCircleOutline />
                 </NavLink>
-                <NavLink to={"cart/shoppingCart"}>
+                <NavLink className="header__nav" to={"cart/shoppingCart"}>
+                  <span>{cartData.length ? cartData.length : 0}</span>
                   <CgShoppingBag />
                 </NavLink>
-                <NavLink to={"favorites"}>
+                <NavLink className="header__nav" to={"favorites"}>
+                  <span>{wishlistData.length ? wishlistData.length : 0}</span>
                   <BsBagHeart />
                 </NavLink>
               </div>

@@ -7,7 +7,7 @@ import {
   FaRegStarHalfStroke,
   FaStar,
 } from "react-icons/fa6";
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import CardItem from "../../components/cardItem/CardItem";
@@ -17,6 +17,9 @@ import emptyImg from "../../assets/Cart/emptyw.svg";
 import { toggleHeart } from "../../context/slices/wishlistSlices";
 
 const Favorites = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
   let wishlistData = useSelector((state) => state.wishlist.value);
   const cartData = useSelector((state) => state.cart.value);
   console.log(wishlistData);

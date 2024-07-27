@@ -4,17 +4,21 @@
     padding: 20px;
   }
   &__items {
+    padding-top: 20px;
     display: flex;
     justify-content: space-around;
-    a {
-      width: 25%;
+    width: 45%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid transparent;
+    color: #b1b5c3;
+    transition: 0.4s;
+    li {
       display: flex;
       align-items: center;
       gap: 10px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid transparent;
-      color: #b1b5c3;
-      transition: 0.4s;
 
       span {
         padding: 10px 15px;
@@ -23,9 +27,6 @@
         color: #fcfcfd;
         border-radius: 50%;
       }
-    }
-    a:first-child {
-      color: black;
       span {
         background: black;
         border-bottom: 2px solid #000;

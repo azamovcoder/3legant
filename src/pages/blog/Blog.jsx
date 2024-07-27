@@ -1,11 +1,14 @@
 import "./Blog.scss";
 
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 
 import { BlogData } from "../../static";
 import Newsletter from "../../components/newsletter/Newsletter";
 
 const Blog = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
   console.log(BlogData);
   return (
     <Fragment>

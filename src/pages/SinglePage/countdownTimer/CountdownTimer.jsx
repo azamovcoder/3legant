@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 
 const CountdownTimer = () => {
   const calculateTimeLeft = () => {
-    const difference = +new Date("2024-07-27T12:00:00") - +new Date();
+    const difference = +new Date("2024-07-30T12:00:00") - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {
